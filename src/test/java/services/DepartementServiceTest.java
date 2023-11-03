@@ -2,9 +2,12 @@ package services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import tn.esprit.spring.kaddem.entities.Departement;
 import tn.esprit.spring.kaddem.repositories.DepartementRepository;
 import tn.esprit.spring.kaddem.services.DepartementServiceImpl;
@@ -14,6 +17,8 @@ import java.util.List;
 import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
+@ContextConfiguration(classes = {DepartementServiceImpl.class})
+@RunWith(SpringRunner.class)
 
 public class DepartementServiceTest {
 
@@ -23,10 +28,7 @@ public class DepartementServiceTest {
     @Mock
     private DepartementRepository departementRepository;
 
-    @BeforeEach
-    public void init() {
-        MockitoAnnotations.openMocks(this);
-    }
+
 
     @Test
     public void testRetrieveAllDepartements() {
