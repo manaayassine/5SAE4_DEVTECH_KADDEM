@@ -1,10 +1,13 @@
 package tn.esprit.spring.kaddem;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import tn.esprit.spring.kaddem.entities.Contrat;
 import tn.esprit.spring.kaddem.entities.Equipe;
 import tn.esprit.spring.kaddem.entities.Etudiant;
@@ -16,7 +19,8 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@ContextConfiguration(classes = {EquipeServiceTest.class})
+@RunWith(SpringRunner.class)
 public class EquipeServiceTest {
     @Mock
     private EquipeRepository equipeRepository;
