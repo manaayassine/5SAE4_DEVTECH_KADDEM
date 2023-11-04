@@ -90,7 +90,7 @@
         <repository>
             <id>EquipeRepo</id>
             <name>Nexus Repository</name>
-            <url>http://192.168.2.132:8081/repository/EquipeRepo/</url>
+            <url>http://192.168.2.132:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 </project>
