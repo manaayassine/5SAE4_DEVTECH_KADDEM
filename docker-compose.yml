@@ -2,7 +2,7 @@ version: "2"
 services:
   spring:
     depends_on: [mysql]
-    image: yassinemanaa/kaddem
+    image: yassinemanaa/kaddem:1-0
     container_name: spring
 
     restart: unless-stopped
@@ -17,8 +17,6 @@ services:
       SPRING_JPA_SHOW_SQL: "true"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQL5InnoDBDialect
-      labels:
-      - "1-0"
   mysql:
     image: mysql:latest
     restart: unless-stopped
