@@ -26,7 +26,7 @@ services:
     environment:
       MYSQL_DATABASE: kaddem
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD:
     ports:
       - "3037:3306"
     networks:
