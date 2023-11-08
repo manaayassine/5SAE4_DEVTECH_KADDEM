@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
   spring:
     depends_on: [mysql]
@@ -7,7 +7,7 @@ services:
 
     restart: unless-stopped
     ports:
-      - "8088:8088"
+      - "8089:8089"
 
 
     environment:
