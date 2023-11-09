@@ -1,4 +1,4 @@
-package tn.esprit.spring.kaddem.Controller;
+package tn.esprit.spring.kaddem;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,8 +25,7 @@ import java.util.List;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@ContextConfiguration(classes = {EquipeRestController.class})
-@RunWith(SpringRunner.class)
+
 public class EquipeRestControllerTest {
 
     private MockMvc mockMvc;

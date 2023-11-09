@@ -1,50 +1,56 @@
 package tn.esprit.spring.kaddem;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import tn.esprit.spring.kaddem.entities.Contrat;
 import tn.esprit.spring.kaddem.entities.Equipe;
-import tn.esprit.spring.kaddem.entities.Etudiant;
-import tn.esprit.spring.kaddem.entities.Niveau;
 import tn.esprit.spring.kaddem.repositories.EquipeRepository;
 import tn.esprit.spring.kaddem.services.EquipeServiceImpl;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@ContextConfiguration(classes = {EquipeServiceTest.class})
-@RunWith(SpringRunner.class)
 public class EquipeServiceTest {
     @Mock
     private EquipeRepository equipeRepository;
 
     @InjectMocks
     private EquipeServiceImpl equipeService;
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
     @Test
     void testAddEquipe() {
-        // Créez une équipe de test
-        Equipe equipe = new Equipe();
-        equipe.setIdEquipe(1); // L'id de l'équipe après l'ajout
+        // Arrange
+        // Créez une équipe de test avec un ID spécifique
+        Equipe equipeAjoutee = new Equipe();
+        equipeAjoutee.setIdEquipe(1);
 
         // Configurez le comportement du repository mock
-        Mockito.when(equipeRepository.save(Mockito.any(Equipe.class))).thenReturn(equipe);
+        Mockito.when(equipeRepository.save(Mockito.any(Equipe.class))).thenReturn(equipeAjoutee);
 
-        // Appelez la méthode à tester
-        Equipe equipeAjoutee = equipeService.addEquipe(new Equipe());
+        // Act
+        // Appelez la méthode à tester en ajoutant une nouvelle équipe
+        Equipe equipeRetournee = equipeService.addEquipe(new Equipe());
 
+        // Assert
         // Vérifiez si l'équipe retournée est la même que celle ajoutée
-        assertEquals(equipe.getIdEquipe(), equipeAjoutee.getIdEquipe());
+        assertEquals(equipeAjoutee.getIdEquipe(), equipeRetournee.getIdEquipe());
 
         // Vérifiez si la méthode save a été appelée avec la bonne équipe
         Mockito.verify(equipeRepository, Mockito.times(1)).save(Mockito.any(Equipe.class));
     }
+
     @Test
     void testRetrieveAllEquipes() {
         // Créez des équipes de test

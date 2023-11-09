@@ -10,7 +10,7 @@
     </parent>
     <groupId>tn.esprit.spring</groupId>
     <artifactId>kaddem</artifactId>
-    <version>1.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>kaddem</name>
     <description>kaddem</description>
     <properties>
@@ -36,6 +36,12 @@
             <artifactId>testng</artifactId>
             <version>7.4.0</version> <!-- Utilisez la dernière version de TestNG disponible -->
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.8</version>
         </dependency>
 
         <dependency>
@@ -90,7 +96,7 @@
         <repository>
             <id>EquipeRepo</id>
             <name>Nexus Repository</name>
-            <url>http://192.168.2.132:8081/repository/maven-releases/</url>
+            <url>http://192.168.2.132:8081/repository/EquipeRepo/</url>
         </repository>
     </distributionManagement>
 </project>
