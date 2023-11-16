@@ -23,5 +23,12 @@ stages {
                                     }
                                   }
                              }
+    stage('Junit test') {
+            steps {
+               script {
+                       sh 'mvn test -Dtest=EtudiantRepositoryWithUnitTest'
+                      }
+                 }
+           }
     }
 }
