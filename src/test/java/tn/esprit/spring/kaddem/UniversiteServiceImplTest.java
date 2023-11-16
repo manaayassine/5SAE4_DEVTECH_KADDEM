@@ -19,7 +19,6 @@ import tn.esprit.spring.kaddem.services.UniversiteServiceImpl;
 
 import java.util.*;
 
-import static jdk.internal.org.objectweb.asm.util.CheckClassAdapter.verify;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
