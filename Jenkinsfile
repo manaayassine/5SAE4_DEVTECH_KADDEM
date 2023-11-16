@@ -13,5 +13,6 @@ stages {
                 // Cette étape va nettoyer et compiler le projet avec Maven
                 sh 'mvn clean compile'
             }
-        }
+        }    
+    }
 }
