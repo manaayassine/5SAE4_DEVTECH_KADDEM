@@ -37,9 +37,9 @@ stages {
                 }
             }
         }
-    stage('BUILD IMAGE'){
+    stage('build docker image'){
       steps{
-  sh ' docker build -t kaddem:1.0 .'
+  sh 'docker build -t kaddem:1.0 .'
       }
     }
     }
