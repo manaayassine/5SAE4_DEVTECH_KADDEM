@@ -30,5 +30,12 @@ stages {
                       }
                  }
            }
+     stage('Nexus') {
+            steps {
+                script {
+                    sh 'mvn deploy -DskipTests'
+                }
+            }
+        }
     }
 }
