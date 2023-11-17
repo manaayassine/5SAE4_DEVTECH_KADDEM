@@ -37,5 +37,10 @@ stages {
                 }
             }
         }
+    stage('BUILD IMAGE'){
+      steps{
+  sh ' docker build -t kaddem:1.0 .'
+      }
+    }
     }
 }
