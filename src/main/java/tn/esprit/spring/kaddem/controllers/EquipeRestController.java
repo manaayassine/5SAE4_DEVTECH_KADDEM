@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/equipe")
 public class EquipeRestController {
+
 	IEquipeService equipeService;
 	// http://localhost:8089/Kaddem/equipe/retrieve-all-equipes
 	@GetMapping("/retrieve-all-equipes")
