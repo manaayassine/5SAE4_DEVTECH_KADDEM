@@ -42,5 +42,16 @@ stages {
   sh 'docker build -t kaddem:1.0 .'
       }
     }
+    stage('Deploy Docker Image') {
+        steps {
+        
+
+             sh ' docker login -u ahmedtijani -p ahmedfcb10 '
+              sh 'docker push ahmedtijani/kaddem:1.0'
+          
+
+          
+        }
+      }
     }
 }
