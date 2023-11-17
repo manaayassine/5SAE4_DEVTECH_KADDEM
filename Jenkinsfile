@@ -47,6 +47,7 @@ stages {
         
 
              sh ' docker login -u ahmedtijani -p ahmedfcb10 '
+             sh 'docker tag kaddem:1.0 ahmedtijani/kaddem:1.0'
               sh 'docker push ahmedtijani/kaddem:1.0'
           
 
