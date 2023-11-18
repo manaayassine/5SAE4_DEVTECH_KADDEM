@@ -2,7 +2,7 @@ version: "2"
 services:      
   spring:
     depends_on: [mysql]
-    image: youssefhamouda/kaddem
+    image: youssefhamouda/kaddem:1.0
     container_name: spring
 
     restart: unless-stopped
